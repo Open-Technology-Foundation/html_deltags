@@ -1,0 +1,46 @@
+#!/bin/bash
+#shellcheck disable=SC1090,SC1091,SC2155,SC2174
+set -euo pipefail
+shopt -s extglob globstar checkwinsize
+declare -r PRGNAME=html_deltags
+declare -r AUTHOR='Gary Dean, garydean@okusi.id'
+declare -r REPOSITORY="https://github.com/Open-Technology-Foundation/${PRGNAME}"
+declare -r PRG0=$(readlink -en -- "$0")
+declare -r PRGDIR="${PRG0%/*}"
+declare -r PRG="${PRG0##*/}"
+((EUID)) && { >&2 echo "$PRG requires root."; exit 1; }
+
+cd "$PRGDIR"
+
+declare -- prg_location="/usr/share/$PRGNAME"
+[[ -d "$prg_location" ]] || mkdir --mode=755 -p "$prg_location"
+
+echo "$PRG will copy $PRGNAME files to $prg_location"
+echo "and create symlink /usr/local/bin/$PRGNAME."
+echo
+declare -p PRGNAME REPOSITORY AUTHOR |sed 's/declare -[niaAr-] //'
+echo
+read -r -p "PRG: Proceed? y/n "
+[[ $REPLY == 'y' ]] || exit 1
+
+rsync -aql "$PRGDIR"/ "$prg_location"/
+echo -e "\n${PRGNAME} has been copied to $prg_location."
+
+cd /usr/local/bin
+rm -f "${PRGNAME}"
+ln -s "$prg_location/${PRGNAME}.py" "$PRGNAME"
+echo -e "\nSymlink $PWD/$PRGNAME created."
+ls -ld $PRGNAME
+
+echo -e "\n${PRGNAME} has been installed."
+echo
+read -r -p "Run ${PRGNAME} --help? y/n "
+[[ $REPLY == 'y' ]] || { echo; exit; }
+
+declare -a less=( 'less' '-FXRS' )
+less[0]=$(command -v less 2>/dev/null || echo '')
+[[ -z "${less[0]}" ]] && less=( 'cat' '-s' )
+
+html_deltags --help | "${less[@]}"
+
+#fin
