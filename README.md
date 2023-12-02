@@ -80,8 +80,9 @@ Options:
 As a module:
 ```python
 from html_deltags import html_deltags
-
-min_content = html_deltags(input_source, output, deltags, deltagkws)
+...
+clean_html = html_deltags(input_source, output, deltags, deltagkws)
+...
 ```
 
 ## Requirements
