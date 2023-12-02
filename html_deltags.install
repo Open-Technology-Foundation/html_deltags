@@ -1,5 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #shellcheck disable=SC1090,SC1091,SC2155,SC2174
+##
+# $PRG
+#
+# Install '$PRGNAME' - HTML tag-remover/reformatter.
+#
+# 1. Copies all $PRGNAME files to directory '$prg_location'.
+# 2. Creates symlink '/usr/local/bin/$PRGNAME'.
+#
+# $PRGNAME processes an HTML file/stdin by removing specified
+# HTML tags and comments.
+#
+# Outputs detagged/minified HTML to file/stdout.
+#
 set -euo pipefail
 shopt -s extglob globstar checkwinsize
 declare -r PRGNAME=html_deltags
@@ -10,9 +23,36 @@ declare -r PRGDIR="${PRG0%/*}"
 declare -r PRG="${PRG0##*/}"
 ((EUID)) && { >&2 echo "$PRG requires root."; exit 1; }
 
+[[ $PRGDIR == /usr/share/$PRGNAME ]] && {
+  >&2 echo "Cannot install into /usr/share/$PRGNAME"
+  exit 1
+}
+
+bash_docstring.lite() {
+  [[ $0 == 'bash' ]] && return 0
+  local -i _eval=0
+  [[ "${1:-}" == '-e' ]] && _eval=1
+  local -- line pline
+  while IFS= read -r line; do
+    line=${line#"${line%%[![:blank:]]*}"}
+    [[ -z "$line" ]]                    && continue
+    [[ ${line:0:1} == '#' ]]            || break
+    [[ $line == '#' || $line == '#@' ]] && { echo; continue; }
+    [[ $line =~ ^\#[\@]{,1}\ (.*) ]]    &&  pline="${BASH_REMATCH[1]}" || continue
+    ((_eval)) && { eval "echo -e \"$pline\""; continue; }
+    echo -e "$pline"
+  done <"$0"
+  return 0
+}
+declare -fx 'bash_docstring.lite'
+
 cd "$PRGDIR"
 
+# Help
 declare -- prg_location="/usr/share/$PRGNAME"
+[[ " $* " == *' -h '* || " $* " == *' --help '* ]] && { bash_docstring.lite -e; exit 0; }
+
+# create destination dir in /usr/share
 [[ -d "$prg_location" ]] || mkdir --mode=755 -p "$prg_location"
 
 echo "$PRG will copy $PRGNAME files to $prg_location"
@@ -20,7 +60,7 @@ echo "and create symlink /usr/local/bin/$PRGNAME."
 echo
 declare -p PRGNAME REPOSITORY AUTHOR |sed 's/declare -[niaAr-] //'
 echo
-read -r -p "PRG: Proceed? y/n "
+read -r -p "$PRG: Proceed? y/n "
 [[ $REPLY == 'y' ]] || exit 1
 
 rsync -aql "$PRGDIR"/ "$prg_location"/
@@ -34,7 +74,7 @@ ls -ld $PRGNAME
 
 echo -e "\n${PRGNAME} has been installed."
 echo
-read -r -p "Run ${PRGNAME} --help? y/n "
+read -r -p "$PRG: Run ${PRGNAME} --help? y/n "
 [[ $REPLY == 'y' ]] || { echo; exit; }
 
 declare -a less=( 'less' '-FXRS' )

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 """html_deltags - html tag-remover/reformatter
 
 The html_deltags script processes an HTML file (or stdin) by removing specified tags and comments, then outputs detagged/minified HTML to a file or stdout.
@@ -7,24 +7,28 @@ Usage:
   html_deltags [options] [input_file]
 
 Arguments:
-  input_file        Path to HTML file to be detagged/minified. Reads from stdin if not provided.
+  input_file
+      Path to HTML file to be detagged/minified.
+      Reads from stdin if not provided.
 
 Options:
-  -O, --output      Output file for detagged HTML.
-                    Defaults to stdout.
-  -d, --delete      Tags to remove, as a comma-separated list.
-                    Multiple -d options allowed.
-                    Example: ... -d script,link,meta ...
-  -k, --kw-delete   Remove tags containing specific keywords.
-                    Specify tag, space, then pattern/keyword.
-                    Example: ... -k 'div sometext' ...
-                    Multiple -k options allowed.
-  -p, --parser      BS4 html parser to use.
-                    May be 'html5lib', 'lxml', or 'html.parser'.
-                    Default: html5lib
-  -S, --symlink     Create a symlink to /usr/local/bin/html_deltags
-                    for this script.
-  -h, --help        Display this help message and exit.
+  -O|--output filename
+      Output file for detagged HTML.
+      Defaults to stdout.
+  -d|--delete tag[,tag,tag]
+      HTML tags to remove, as a comma-separated list.
+      Multiple -d options allowed.
+      Example: ... -d script,link,meta ...
+  -k|--kw-delete 'tag keyword'
+      Remove tags containing specific keywords.
+      Specify tag, space, then pattern/keyword.
+      Multiple -k options allowed.
+      Example: ... -k 'div sometext' ...
+  -p|--parser html5lib|lxml|html.parser
+      BS4 html parser to use.
+      Default: html5lib
+  -h|--help
+      Display this help message and exit.
 
 Parsers:
   Each of the parsers has its strengths and weaknesses.
@@ -161,28 +165,6 @@ if __name__ == '__main__':
       _deltagkws.append((_arr[0], ' '.join(_arr[1:])))
       _index += 1
 
-    elif _arg in ('-S', '--symlink'):
-      # Resolve the absolute path of the script
-      script_path = os.path.abspath(sys.argv[0])
-      if os.path.islink(script_path):
-        script_path = os.readlink(script_path)
-      base_name = os.path.basename(script_path)
-      if base_name.endswith('.py'):
-        base_name = base_name[:-3]
-      symlink_target = os.path.join('/usr/local/bin', base_name)
-      # Check if the symlink already exists
-      if os.path.exists(symlink_target):
-        print(f"Symlink already exists at {symlink_target}", file=sys.stderr)
-      else:
-        try:
-          # Create the symbolic link
-          os.symlink(script_path, symlink_target)
-        except OSError as e:
-          print(f"Error creating symlink: {e}", file=sys.stderr)
-          sys.exit(1)
-      print(f"Symlink created at {symlink_target} pointing to {script_path}")
-      sys.exit(0)
-
     # input source
     elif input_source is None:
       input_source = _arg
@@ -200,3 +182,8 @@ if __name__ == '__main__':
   html_deltags(input_source, _output_file, _deltags, _deltagkws, _parser)
 
 #fin
+#    -h|--help
+#    -O|--output
+#    -p|--parser
+#    -d|--delete
+#    -k|--kw-delete
