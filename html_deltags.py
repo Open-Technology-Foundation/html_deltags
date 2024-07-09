@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """html_deltags - html tag-remover/reformatter
 
 The html_deltags script processes an HTML file (or stdin) by removing specified tags and comments, then outputs detagged/minified HTML to a file or stdout.
