@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+	<!-- SITE TITTLE -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<script type="text/javascript" src="https://jdihn.go.id/assetsv3/plugins/moment/moment.js"></script>
+<script type="text/javascript" src="https://jdihn.go.id/assetsv3/plugins/moment/locale/id.js"></script>
+<script type="text/javascript">
+	var APIurl = "https://jdihn.go.id/";
+  	moment.locale('id');
+</script>
+<!-- FAVICON -->
+<link rel="shortcut icon" type="image/png" href="https://jdihn.go.id/assetsv3/img/icon-color.png"/>
+	<title>Dokumen Hasil Integrasi JDIHN
+</title>
+    <meta name="keywords" content="peraturan,undang-undang, uud,uud 45, hukum,  peraturan pemerintah,peraturan menteri,peraturan daerah,perpes,permen,perda, keputusan, jdihn, dokumen, integrasi " />
+<meta name="description" content="Jaringan Dokumentasi dan Informasi Hukum Nasional mengintegrasikan berbagai jenis dokumen hukum yang berasal dari anggota JDIH yang di integrasikan dalam satu portal dan mudah diakses oleh masyarakat luas.">
+</head>     
+
+<body id="body">
+  
+	<!--  Preloader -->
+	<!-- <div id="preloader" class="smooth-loader-wrapper">
+		<div class="smooth-loader">
+			<div class="sk-circle">
+				<div class="sk-circle1 sk-child"></div>
+				<div class="sk-circle2 sk-child"></div>
+				<div class="sk-circle3 sk-child"></div>
+				<div class="sk-circle4 sk-child"></div>
+				<div class="sk-circle5 sk-child"></div>
+				<div class="sk-circle6 sk-child"></div>
+				<div class="sk-circle7 sk-child"></div>
+				<div class="sk-circle8 sk-child"></div>
+				<div class="sk-circle9 sk-child"></div>
+				<div class="sk-circle10 sk-child"></div>
+				<div class="sk-circle11 sk-child"></div>
+				<div class="sk-circle12 sk-child"></div>
+			</div>
+		</div>
+	</div> -->
+   
+
+	<!-- ====================================
+——— HEADER
+===================================== -->
+<header class="header" id="pageTop">
+		<nav class="nav-menuzord navbar-sticky">
+		  <div class="container clearfix">
+		<div id="menuzord" class="menuzord">
+		  <a href="https://jdihn.go.id" class="menuzord-brand">
+			<img src="https://jdihn.go.id/assetsv3/img/logo-1.png" alt="logo-img">
+		  </a>
+
+		  <div class="nav-item dropdown nav-item-left mr-0">
+			<a href="javascript:void(0)" class="btn btn-xs btn-primary d-none d-lg-inline-block" data-toggle="dropdown" role="button" aria-haspopup="true"
+			  aria-expanded="false">
+			  <i class="fa fa-search mr-0" aria-hidden="true"></i>
+			</a>
+
+			<div class="dropdown-menu dropdown-menu-right rounded-0">
+			  <form action="https://jdihn.go.id/pencarian" method="GET">
+				<div class="input-group input-group-sm">
+				  <input type="text" name="keyword" class="form-control form-control-sm rounded-0" required="" placeholder="Cari....">
+				  <div class="input-group-append">
+					<button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
+					  <span class="text-white text-uppercase font-weight-bold"><i class="fa fa-search mr-0" aria-hidden="true"></i></span>
+					</button>
+				  </div>
+				</div>
+			  </form>
+			</div>
+		  </div>
+
+		  		  <ul class="menuzord-menu menuzord-right">
+			<li class=" ">
+			  <a class="" href="javascript:void(0)">JDIHN</a>
+			  <ul class="dropdown drop-up">
+				<li class="  ">
+				  <a href="https://jdihn.go.id">Utama</a>
+				</li>
+
+				<li class="">
+				  <a href="https://jdihn.go.id/sejarah">Sejarah JDIHN</a>
+				</li>
+
+				<li class="">
+				  <a href="https://jdihn.go.id/dasar-hukum">Dasar Hukum</a>
+				</li>
+
+				<li class="">
+				  <a href="https://jdihn.go.id/visi-misi">Visi-Misi</a>
+				</li>
+
+				<li class="">
+				  <a href="https://jdihn.go.id/makna-logo">Makna Logo</a>
+				</li>
+
+				<li class="">
+				  <a href="https://jdihn.go.id/struktur-organisasi">Struktur Organisasi</a>
+				</li>
+
+				<li class="">
+				  <a href="https://jdihn.go.id/statistik">Statistik JDIHN</a>
+				</li>
+			  </ul>
+			</li>
+
+			<li class="active">
+			  <a href="https://jdihn.go.id/dokumen-hukum">Dokumen Hukum</a>
+			</li>
+
+			<li class="">
+			  <a href="https://jdihn.go.id/anggota">Anggota</a>
+			</li>
+
+			<li class="">
+			  <a class="" href="javascript:void(0)">KEGIATAN</a>
+			  <ul class="dropdown drop-up">
+				<li class="">
+				  <a href="https://jdihn.go.id/berita">Berita</a>
+				</li>
+
+				<li class="">
+				  <a href="https://jdihn.go.id/agenda">Agenda</a>
+				</li>
+
+				<li class="">
+				  <a href="https://jdihn.go.id/foto">Galeri Foto</a>
+				</li>
+
+				<li class="">
+				  <a href="https://jdihn.go.id/video">Galeri Video</a>
+				</li>
+			  </ul>
+			</li>
+
+			<li class="">
+			  <a href="https://jdihn.go.id/unduhan">UNDUHAN</a>
+			</li>
+
+            <li>
+                <a href="javascript:void(0)">APLIKASI TERKAIT</a>
+                <ul class="dropdown drop-up">
+                    <li>
+                        <a href="https://e-report.jdihn.go.id/" target="_blank">E-Reporting</a>
+                    </li>
+                    <li>
+                        <a href="https://bphn.jdihn.go.id/SIKUNIK/bukutamu" target="_blank">SIKUNIK</a>
+                    </li>
+                </ul>
+            </li>
+
+			<li class="">
+			  <a href="https://jdihn.go.id/faq">FAQ</a>
+			</li>
+							<li class="">
+				  <a data-toggle="modal" data-target="#login">MASUK</a>
+				</li>
+			
+
+			<!-- <li class="">
+			  <a href="components.html">Components</a>
+			</li> -->
+
+			<li class="py-4">
+			  <form class="d-lg-none" action="index.html" method="post">
+				<div class="input-group input-group-sm">
+				  <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Silahkan isi...">
+				  <div class="input-group-append">
+					<button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
+					  <span class="text-white text-uppercase font-weight-bold">Cari</span>
+					</button>
+				  </div>
+				</div>
+			  </form>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+</header>
+
+	<div class="main-wrapper home-main">
+		<!-- ====================================
+———	PAGE TITLE
+===================================== -->
+<section class="page-title">
+  <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(assetsv3/img/pages/page-title-bg18.jpg);">
+    <div class="container">
+      <div class="row align-items-center justify-content-center" style="height: 200px;">
+        <div class="col-lg-6">
+          <div class="page-title-content">
+            <div class="title-border">
+              <h2 class="text-uppercase text-white font-weight-bold">jenis dokumen</h2>
+            </div>
+            <p class="text-white mb-0"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================
+———	TOUR PACKAGES SECTION
+===================================== -->
+<!-- <section class="bg-smoke py-10"> -->
+<section class="pt-7 pb-9 pt-lg-9 pb-lg-10">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center section-title">
+          <h1 class="text-uppercase font-weight-bold position-relative">
+            <span class="bg-white">
+              Daftar Jenis Dokumen <b class="text-primary">Hasil Integrasi</b>
+            </span>
+          </h1>
+        </div>
+      </div>
+      <div class="col-xl-10">
+  <div class="container" id="tingkat-pusat">
+    <div class="row">
+      <div class="col-lg-12 mb-12 mb-lg-0">
+        <div id="destination">
+          <div class="mb-0">
+            <ul class="nav nav-tabs destination-tabs" id="destinationTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="dhtp-tab" data-toggle="tab" href="#dhtp" role="tab"
+                  aria-controls="dhtp" aria-selected="true">Dokumen Hukum Tingkat Pusat</a>
+              </li>
+
+              <li class="nav-item d-none"></li>
+            </ul>
+
+            <div class="tab-content destinationTab-content" id="destinationTabContent">
+              <div class="tab-pane show active" id="dhtp" role="tabpanel" aria-labelledby="dhtp-tab">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="text-left border-bottom pb-6 mb-7" style="overflow-x:auto;">
+                      <table id="example-dhtp" class="display" style="width:100%">
+                          <thead>
+                              <tr>
+                                  <th style="width: 70%;">Jenis Dokumen</th>
+                                  <th style="width: 15%;">Jumlah</th>
+                                  <th style="width: 15%;">Perkembangan Data</th>
+                                  <th style="width: 15%;">Lihat</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                      </table>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12"></div>
+    </div>
+  </div>
+
+  <div class="container" id="tingkat-daerah">
+    <div class="row">
+      <div class="col-lg-12 mb-12 mb-lg-0">
+        <div id="destination">
+          <div class="mb-0">
+            <ul class="nav nav-tabs destination-tabs" id="destinationTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="dhtp-tab" data-toggle="tab" href="#dhtp" role="tab"
+                  aria-controls="dhtp" aria-selected="true">Dokumen Hukum Tingkat Daerah</a>
+              </li>
+
+              <li class="nav-item d-none"></li>
+            </ul>
+
+            <div class="tab-content destinationTab-content" id="destinationTabContent">
+              <div class="tab-pane show active" id="dhtp" role="tabpanel" aria-labelledby="dhtp-tab">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="text-left border-bottom pb-6 mb-7" style="overflow-x:auto;">
+                      <table id="example-dhtd" class="display" style="width:100%">
+                          <thead>
+                              <tr>
+                                  <th style="width: 70%;">Jenis Dokumen</th>
+                                  <th style="width: 15%;">Jumlah</th>
+                                  <th style="width: 15%;">Perkembangan Data</th>
+                                  <th style="width: 15%;">Lihat</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                      </table>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12"></div>
+    </div>
+  </div>
+
+  <div class="container" id="tingkat-perjanjian">
+    <div class="row">
+      <div class="col-lg-12 mb-12 mb-lg-0">
+        <div id="destination">
+          <div class="mb-0">
+            <ul class="nav nav-tabs destination-tabs" id="destinationTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="dhtp-tab" data-toggle="tab" href="#dhtp" role="tab"
+                  aria-controls="dhtp" aria-selected="true">Perjanjian Kerja Sama</a>
+              </li>
+
+              <li class="nav-item d-none"></li>
+            </ul>
+
+            <div class="tab-content destinationTab-content" id="destinationTabContent">
+              <div class="tab-pane show active" id="dhtp" role="tabpanel" aria-labelledby="dhtp-tab">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="text-left border-bottom pb-6 mb-7" style="overflow-x:auto;">
+                      <table id="example-perjanjian" class="display" style="width:100%">
+                          <thead>
+                              <tr>
+                                  <th style="width: 70%;">Jenis Dokumen</th>
+                                  <th style="width: 15%;">Jumlah</th>
+                                  <th style="width: 15%;">Perkembangan Data</th>
+                                  <th style="width: 15%;">Lihat</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                      </table>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12"></div>
+    </div>
+  </div>
+
+  <div class="container" id="tingkat-perguruan">
+    <div class="row">
+      <div class="col-lg-12 mb-12 mb-lg-0">
+        <div id="destination">
+          <div class="mb-0">
+            <ul class="nav nav-tabs destination-tabs" id="destinationTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="dhtp-tab" data-toggle="tab" href="#dhtp" role="tab"
+                  aria-controls="dhtp" aria-selected="true">Tingkat Perguruan Tinggi</a>
+              </li>
+
+              <li class="nav-item d-none"></li>
+            </ul>
+
+            <div class="tab-content destinationTab-content" id="destinationTabContent">
+              <div class="tab-pane show active" id="dhtp" role="tabpanel" aria-labelledby="dhtp-tab">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="text-left border-bottom pb-6 mb-7" style="overflow-x:auto;">
+                      <table id="example-perguruantinggi" class="display" style="width:100%">
+                          <thead>
+                              <tr>
+                                  <th style="width: 70%;">Jenis Dokumen</th>
+                                  <th style="width: 15%;">Jumlah</th>
+                                  <th style="width: 15%;">Perkembangan Data</th>
+                                  <th style="width: 15%;">Lihat</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                      </table>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12"></div>
+    </div>
+  </div>
+
+  <div class="container" id="tingkat-instrumen">
+    <div class="row">
+      <div class="col-lg-12 mb-12 mb-lg-0">
+        <div id="destination">
+          <div class="mb-0">
+            <ul class="nav nav-tabs destination-tabs" id="destinationTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="dhtp-tab" data-toggle="tab" href="#dhtp" role="tab"
+                  aria-controls="dhtp" aria-selected="true">Instrumen Internasional</a>
+              </li>
+
+              <li class="nav-item d-none"></li>
+            </ul>
+
+            <div class="tab-content destinationTab-content" id="destinationTabContent">
+              <div class="tab-pane show active" id="dhtp" role="tabpanel" aria-labelledby="dhtp-tab">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="text-left border-bottom pb-6 mb-7" style="overflow-x:auto;">
+                      <table id="example-instrumen" class="display" style="width:100%">
+                          <thead>
+                              <tr>
+                                  <th style="width: 70%;">Jenis Dokumen</th>
+                                  <th style="width: 15%;">Jumlah</th>
+                                  <th style="width: 15%;">Perkembangan Data</th>
+                                  <th style="width: 15%;">Lihat</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                      </table>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12"></div>
+    </div>
+  </div>
+
+  <div class="container" id="tingkat-kolonial">
+    <div class="row">
+      <div class="col-lg-12 mb-12 mb-lg-0">
+        <div id="destination">
+          <div class="mb-0">
+            <ul class="nav nav-tabs destination-tabs" id="destinationTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="dhtp-tab" data-toggle="tab" href="#dhtp" role="tab"
+                  aria-controls="dhtp" aria-selected="true">Dokumen Hukum Era Kolonial</a>
+              </li>
+
+              <li class="nav-item d-none"></li>
+            </ul>
+
+            <div class="tab-content destinationTab-content" id="destinationTabContent">
+              <div class="tab-pane show active" id="dhtp" role="tabpanel" aria-labelledby="dhtp-tab">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="text-left border-bottom pb-6 mb-7" style="overflow-x:auto;">
+                      <table id="example-dhek" class="display" style="width:100%">
+                          <thead>
+                              <tr>
+                                  <th style="width: 70%;">Jenis Dokumen</th>
+                                  <th style="width: 15%;">Jumlah</th>
+                                  <th style="width: 15%;">Perkembangan Data</th>
+                                  <th style="width: 15%;">Lihat</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                      </table>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12"></div>
+    </div>
+  </div>
+
+  <div class="container" id="tingkat-monografi">
+    <div class="row">
+      <div class="col-lg-12 mb-12 mb-lg-0">
+        <div id="destination">
+          <div class="mb-0">
+            <ul class="nav nav-tabs destination-tabs" id="destinationTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="dhtp-tab" data-toggle="tab" href="#dhtp" role="tab"
+                  aria-controls="dhtp" aria-selected="true">Monografi</a>
+              </li>
+
+              <li class="nav-item d-none"></li>
+            </ul>
+
+            <div class="tab-content destinationTab-content" id="destinationTabContent">
+              <div class="tab-pane show active" id="dhtp" role="tabpanel" aria-labelledby="dhtp-tab">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="text-left border-bottom pb-6 mb-7" style="overflow-x:auto;">
+                      <table id="example-mono" class="display" style="width:100%">
+                          <thead>
+                              <tr>
+                                  <th style="width: 70%;">Jenis Dokumen</th>
+                                  <th style="width: 15%;">Jumlah</th>
+                                  <th style="width: 15%;">Perkembangan Data</th>
+                                  <th style="width: 15%;">Lihat</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                      </table>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12"></div>
+    </div>
+  </div>
+
+  <div class="container" id="tingkat-majalah">
+    <div class="row">
+      <div class="col-lg-12 mb-12 mb-lg-0">
+        <div id="destination">
+          <div class="mb-0">
+            <ul class="nav nav-tabs destination-tabs" id="destinationTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="dhtp-tab" data-toggle="tab" href="#dhtp" role="tab"
+                  aria-controls="dhtp" aria-selected="true">Artikel/Majalah Hukum</a>
+              </li>
+
+              <li class="nav-item d-none"></li>
+            </ul>
+
+            <div class="tab-content destinationTab-content" id="destinationTabContent">
+              <div class="tab-pane show active" id="dhtp" role="tabpanel" aria-labelledby="dhtp-tab">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="text-left border-bottom pb-6 mb-7" style="overflow-x:auto;">
+                      <table id="example-artikel" class="display" style="width:100%">
+                          <thead>
+                              <tr>
+                                  <th style="width: 70%;">Jenis Dokumen</th>
+                                  <th style="width: 15%;">Jumlah</th>
+                                  <th style="width: 15%;">Perkembangan Data</th>
+                                  <th style="width: 15%;">Lihat</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                      </table>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12"></div>
+    </div>
+  </div>
+
+  <div class="container" id="tingkat-putusan">
+    <div class="row">
+      <div class="col-lg-12 mb-12 mb-lg-0">
+        <div id="destination">
+          <div class="mb-0">
+            <ul class="nav nav-tabs destination-tabs" id="destinationTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="dhtp-tab" data-toggle="tab" href="#dhtp" role="tab"
+                  aria-controls="dhtp" aria-selected="true">Putusan/Yurisprudensi</a>
+              </li>
+
+              <li class="nav-item d-none"></li>
+            </ul>
+
+            <div class="tab-content destinationTab-content" id="destinationTabContent">
+              <div class="tab-pane show active" id="dhtp" role="tabpanel" aria-labelledby="dhtp-tab">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="text-left border-bottom pb-6 mb-7" style="overflow-x:auto;">
+                      <table id="example-putusan" class="display" style="width:100%">
+                          <thead>
+                              <tr>
+                                  <th style="width: 70%;">Jenis Dokumen</th>
+                                  <th style="width: 15%;">Jumlah</th>
+                                  <th style="width: 15%;">Perkembangan Data</th>
+                                  <th style="width: 15%;">Lihat</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                      </table>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-xl-2 d-none d-xl-block mt-6">
+        <div class="element-right-sidebar right-sidebar">
+          <div class="card shadow-none bg-transparent">
+            <h4 class="card-header font-weight-bold bg-primary rounded-top text-white">Jenis Dokumen</h4>
+            <div class="card-body border border-top-0 rounded-bottom components">
+              <ul class="nav scrolling nav-components">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#tingkat-pusat">Tingkat Pusat</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#tingkat-daerah">Tingkat Daerah</a>
+                </li>
+		<li class="nav-item">
+                  <a class="nav-link" href="#tingkat-perjanjian">Perjanjian Kerja Sama</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#tingkat-perguruan">Tingkat Perguruan Tinggi</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#tingkat-instrumen">Instrumen Internasional</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#tingkat-kolonial">Era Kolonial</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#tingkat-monografi">Monografi</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#tingkat-majalah">Artikel/Majalah</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#tingkat-putusan">Putusan/Yurisprudensi</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+</div>
+</section>
+
+
+<!-- modal for chart -->
+<div class="modal fade" id="modal-chart" tabindex="-1" role="dialog" aria-labelledby="modal-chart-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" id="modal-chart-header">
+                <h5 class="modal-title" id="modal-chart-label">Grafik Penambahan Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btn-close-modal-chart">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-date-picker">
+
+                <!-- add date range picker here using bootstrap -->
+                <form class="row flex justify-content-end">
+                    <div class="col-sm-12 col-md-8 col-lg-6">
+                        <div class="input-group date" id="datepicker">
+                            <input type="text" class="form-control" id="input-date"/>
+                            <span class="input-group-append">
+                                <button type="button" class="btn btn-primary" id="btn-submit-date">
+                                    <i class="fa fa-search">Filter</i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-body" id="modal-chart-body">
+
+                <div id="chart-container"></div>
+                <div id="chart-loading"></div>
+            </div>
+            <!-- modal footer untuk menampilkan keterangan -->
+            <div class="modal-footer" id="modal-chart-footer">
+                <span class="text-muted" id="keterangan-chart">
+                    Klik dan seret pada grafik untuk memperbesar dan memeriksa data.
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+	</div><!-- element wrapper ends -->
+
+	<!-- ====================================
+——— FOOTER SECTION
+===================================== -->
+<footer class="footer">
+  <div class="footer-bg-color py-9">
+	<div class="container">
+	  <div class="row">
+		<div class="col-md-6 col-lg-3 mb-7 mb-lg-0">
+		  <a class="d-inline-block" href="https://jdihn.go.id">
+			<img class="w-100 mb-6" src="https://jdihn.go.id/assetsv3/img/logo-7.png" alt="img">
+		  </a>
+		  <p class="mb-0; text-primary" style="text-align: justify;"><i>Disclaimer</i>: Seluruh dokumen hukum yang terhimpun di dalam laman jdihn.go.id bersumber dari laman anggota JDIHN. Apabila terdapat keraguan atas isi dokumen di dalam laman ini, agar melakukan pengecekan dan konfirmasi ke laman Anggota JDIHN terkait.</p>
+		</div>
+
+		<div class="col-md-6 col-lg-3 mt-md-4 mb-7 mb-lg-0">
+		  <div class="title-tag">
+			<h6>KONTAK KAMI</h6>
+		  </div>
+
+		  <p>------------------------------------</p>
+		  <ul class="list-unstyled mb-0">
+			<li class="media mb-2">
+			  <div class="mr-3">
+				<i class="fa fa-home" aria-hidden="true"></i>
+			  </div>
+			  <div class="media-body">
+				 <a href="https://www.google.com/maps/place/Kementerian+Hukum+dan+Hak+Asasi+Manusia+-+Badan+Pembinaan+Hukum+Nasional/@-6.2592245,106.8677637,18.39z/data=!4m5!3m4!1s0x0:0x24d7d6da86008a44!8m2!3d-6.259408!4d106.867599">Jl. Mayjen Soetoyo No. 10 Cililitan, Jakarta</a>
+			  </div>
+			</li>
+
+			<li class="media mb-2">
+			  <div class="mr-3">
+				<i class="fa fa-phone" aria-hidden="true"></i>
+			  </div>
+			  <div class="media-body">
+				<a>+6221-8091908</a>
+			  </div>
+			</li>
+			
+			<li class="media">
+			  <div class="mr-3">
+				<i class="fa fa-envelope-o" aria-hidden="true"></i>
+			  </div>
+			  <div class="media-body">
+				<a href="mailTo:pusdok@jdihn.go.id">pusdok@jdihn.go.id</a>
+			  </div>
+			</li>
+		  </ul>
+		</div>
+
+		<div class="col-md-6 col-lg-3 mt-md-4 mb-7 mb-lg-0">
+		  <div class="title-tag">
+			<h6>TAUTAN</h6>
+		  </div>
+
+		  <p>------------------------------------</p>
+		  <ul class="list-unstyled mb-0">
+			<li class="media mb-2">
+			  <div class="mr-3">
+				<i class="fa fa-globe" aria-hidden="true"></i>
+			  </div>
+			  <div class="media-body">
+				 <a href="https://kemenkumham.go.id">kemenkumham.go.id</a>
+			  </div>
+			</li>
+
+			<li class="media mb-2">
+			  <div class="mr-3">
+				<i class="fa fa-globe" aria-hidden="true"></i>
+			  </div>
+			  <div class="media-body">
+				<a href="https://bphn.go.id">bphn.go.id</a>
+			  </div>
+			</li>
+			
+			<li class="media">
+			  <div class="mr-3">
+				<i class="fa fa-globe" aria-hidden="true"></i>
+			  </div>
+			  <div class="media-body">
+				<a href="http://ditjenpp.kemenkumham.go.id">ditjenpp.go.id</a>
+			  </div>
+			</li>
+		  </ul>
+		</div>
+
+		<div class="col-md-6 col-lg-3 mt-lg-4">
+		  <div class="title-tag">
+			<h6>Sosial Media Pusat JDIHN</h6>
+		  </div>
+
+		  <p>Silahkan pantau dan ikuti kegiatan kami melalui sosial media berikut</p>
+
+		  <ul class="list-inline d-flex mb-0">
+			<li class="mr-3 mr-lg-2 mr-xl-3">
+			  <a class="icon-default icon-border rounded-circle hover-bg-primary" href="https://www.facebook.com/jdih.nasional">
+				<i class="fa fa-facebook text-white" aria-hidden="true"></i>
+			  </a>
+			</li>
+
+			<li class="mr-3 mr-lg-2 mr-xl-3">
+			  <a class="icon-default icon-border rounded-circle hover-bg-primary" href="https://twitter.com/jdihnindonesia">
+				<i class="fa fa-twitter text-white" aria-hidden="true"></i>
+			  </a>
+			</li>
+
+			<li class="mr-3 mr-lg-2 mr-xl-3">
+			  <a class="icon-default icon-border rounded-circle hover-bg-primary" href="https://www.instagram.com/jdihnindonesia/">
+				<i class="fa fa-instagram text-white" aria-hidden="true"></i>
+			  </a>
+			</li>
+
+			<li class="mr-3 mr-lg-2 mr-xl-3">
+			  <a class="icon-default icon-border rounded-circle hover-bg-primary" href="https://www.youtube.com/channel/UCCtMZUpkE_1HyJrYwchuprg">
+				<i class="fa fa-youtube text-white" aria-hidden="true"></i>
+			  </a>
+			</li>
+		  </ul>
+
+		  <a class="d-inline-block mb-0" href='https://play.google.com/store/apps/details?id=id.go.kemenkumham.jdihn_mobile&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+			<img class="w-100 mb-1" src="https://jdihn.go.id/assetsv3/img/gplay.png" alt="img">
+		  </a>
+
+		</div>
+	  </div>
+	</div>
+  </div>
+
+  <div class="copyright py-6">
+	<div class="container">
+	  <div class="row align-items-center">
+		<div class="col-md-6 order-1 order-md-0">
+		  <p class="mb-0 mb-md-0 text-md-left">Copyright &copy; 2021 All Rights Reserved by
+			<a href="https://jdihn.go.id/" target="_blank">JDIHN</a>
+		  </p>
+		</div>
+	  </div>
+	</div>
+  </div>
+</footer>
+  	<!-- ====================================
+	——— MODAL SECTION
+	===================================== -->
+	<!-- Signup Modal -->
+	<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-label="signupModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header rounded">
+	        <h3 class="modal-title text-uppercase font-weight-bold">Buat Akun</h3>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <form id="register-form" action="https://jdihn.go.id/register" method="post">
+            	<input type="hidden" name="_token" value="wcAgrYaJrX3spCpjhrCXw6eX3I3qhSXrZVFOqf3q">
+            	<input type="hidden" name="tipe_aplikasi" id="non_standart" value="non_standart">
+            	<div class="row pb-8">
+            		<div class="col-6">
+            			<div class="form-group has-feedback ">
+		                    <!-- <label for="email"><i class="fa fa-fw fa-envelope-o"></i> Email</label> -->
+		                    <input type="email" name="email" value="" id="email" class="form-control bg-smoke" placeholder="Email" aria-describedby="helpId" required>
+		                    		                </div>
+
+			          	<div class="form-group has-feedback ">
+			                <!-- <label for="password"><i class="fa fa-fw fa-key"></i> Password</label> -->
+			                <input type="password" name="password" id="password" class="form-control bg-smoke" placeholder="Password" aria-describedby="helpId" required autofocus>
+			                <small>*Password minimal 8 karakter, minimal 1 huruf besar, minimal 1 huruf kecil, minimal 1 angka, dan minimal 1 spesial karakter (.#?!@$%^&*-)</small>
+			                			            </div>
+
+			            <div class="form-group has-feedback ">
+			                <input type="password" name="password_confirmation" class="form-control bg-smoke"
+			                        placeholder="Konfirmasi Ulang Password" required>
+			                			            </div>
+
+		                <div class="form-group has-feedback ">
+		                    <!-- <label for="mobile_phone"><i class="fa fa-fw fa-volume-control-phone"></i> Telepon</label> -->
+		                    <input type="text" name="mobile_phone" value="" id="mobile_phone" class="form-control bg-smoke" placeholder="Telepon" aria-describedby="helpId" required>
+		                    		                </div>
+		                
+		                <div class="form-group has-feedback ">
+		                    <!-- <label for="address"><i class="fa fa-fw fa-map-marker"></i> Alamat</label> -->
+		                    <textarea name="address" id="address" class="form-control bg-smoke" placeholder="Alamat" aria-describedby="helpId" required></textarea>
+		                    		                </div>
+
+		                <div class="form-group has-feedback " id="form_link_webpage_anggota">
+		                    <!-- <label for="site"><i class="fa fa-fw fa-desktop"></i> Link Webpage Anggota</label> -->
+		                    <input type="text" name="site" id="site" value="" class="form-control bg-smoke" placeholder="URL Website JDIH (Gunakan http:// atau https://)" aria-describedby="helpId">
+		                    		                </div>
+            		</div>
+            		<div class="col-6">
+	            		<div class="form-group has-feedback ">
+			                <!-- <label for="option_jenis_anggota"><i class="fa fa-fw fa-user"></i> Kategori Anggota</label> -->
+			                <select name="option_jenis_anggota" id="option_jenis_anggota" class="form-control select2 bg-smoke" style="width: 100%;" required>
+			                    <!-- <option value="" selected disabled>Pilih Anggota</option> -->
+			                    
+			                </select>
+			                <input type="hidden" name="jenis_anggota" id="jenis_anggota"/>
+			                			            </div>
+
+			            <div class="form-group has-feedback ">
+			                <!-- <label for="option_jenis_anggota"><i class="fa fa-fw fa-user"></i> Kategori Anggota</label> -->
+			                <select style="width: 100%;" class="select2 form-control bg-smoke" id="provinsi" name="provinsi_indonesia">
+                            </select>
+
+                            <!-- <input type="hidden" name="provinsi" id="provinsi"/>
+                            <input type="hidden" name="provinsi_id" id="provinsi_id"/>
+                            <input type="hidden" name="provinsi_name" id="provinsi_name"/> -->
+			                			            </div>
+
+			            <div class="form-group has-feedback ">
+			                <!-- <label for="option_jenis_anggota"><i class="fa fa-fw fa-user"></i> Kategori Anggota</label> -->
+			                <select style="width: 100%;" class="select2 form-control bg-smoke" id="kabupaten" name="kabupaten_indonesia">
+			                	<option selected="" disabled="">Silahkan Pilih Provinsi</option>
+                                  </select>
+
+			                			            </div>
+
+			            <div class="form-group has-feedback ">
+                            <label for="nama_anggota"><i class="fa fa-fw fa-address-book"></i> Nama Anggota</label>
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6">
+                                    <input type="text" name="first_name" value="" id="first_name" class="form-control" placeholder="Nama Awal" aria-describedby="helpId" readonly required style="width: 100%;">
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <input type="text" name="last_name" value="" id="last_name" class="form-control" placeholder="Nama Akhir" aria-describedby="helpId" required style="width: 100%;">
+                                </div>
+                            </div>
+                                                                                </div>
+
+                        <div id="slidecaptcha-register" class="pb-2 ">
+                        	                        </div>
+	            	</div>
+            	</div>            	
+
+	          <!-- <div class="form-group form-check mb-0">
+	            <input type="checkbox" class="form-check-input" id="exampleCheck4">
+	            <label class="form-check-label text-gray-color mb-3" for="exampleCheck4">
+	              I agree to the terms of use and privacy.
+	            </label>
+	          </div> -->
+
+	          <button type="submit" class="btn btn-primary btn-block text-uppercase">Daftar</button>
+	        </form>
+	      </div>
+
+	      <div class="modal-footer justify-content-center">
+	        <p class="mb-1">Sudah memiliki akun? <a href="javascript:void(0)" data-toggle="modal" data-dismiss="modal" data-target="#login">Masuk akun</a></p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Login Modal -->
+	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-label="loginModalLabel" aria-hidden="true" >
+	  <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header rounded">
+	        <h3 class="modal-title text-uppercase font-weight-bold">Masuk ke akun anda</h3>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <form id="login-form" action="https://jdihn.go.id/login" method="post">
+                <input type="hidden" name="_token" value="wcAgrYaJrX3spCpjhrCXw6eX3I3qhSXrZVFOqf3q">
+	          <div class="form-group has-feedback ">
+                    <!-- <label>E-mail</label> -->
+                    <div class="input-group">
+                        <input type="email" name="email" class="form-control red" value="" placeholder="Email" style="border-left: 1px; background-color: #ffffff95;">
+                    </div>
+                                    </div>
+
+	          	<div class="form-group has-feedback">
+                    <!-- <label>Password</label> -->
+                    <div class="input-group">
+                        <input type="password" class="form-control red" placeholder="Password" name="password" required style="border-left: 1px; background-color: #ffffff95;">
+                    </div>
+                                    </div>
+
+                <div id="slidecaptcha" class="form-group pb-8"></div>
+
+	          <button type="submit" class="btn btn-primary btn-block text-uppercase">Masuk</button>
+	        </form>
+	      </div>
+	      	                <a class="btn btn-link" href="https://jdihn.go.id/password/reset">
+                    Lupa Password Anda?
+                </a>
+            
+	      <div class="modal-footer justify-content-center">
+	        <p class="mb-1">Belum memiliki akun? <a href="javascript:void(0)" data-toggle="modal" data-dismiss="modal" data-target="#signup">Buat Akun</a></p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+    <!-- Plugins css Style -->
+<link href="https://jdihn.go.id/assetsv3/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://jdihn.go.id/assetsv3/plugins/no-ui-slider/nouislider.min.css" rel="stylesheet" />
+<!-- <link href="https://jdihn.go.id/assetsv3/plugins/owl-carousel/owl.carousel.min.css" rel="stylesheet" media="screen">
+<link href="https://jdihn.go.id/assetsv3/plugins/owl-carousel/owl.theme.default.min.css" rel="stylesheet" media="screen"> -->
+<link href="https://jdihn.go.id/assetsv3/plugins/fancybox/jquery.fancybox.min.css" rel="stylesheet" />
+<link href="https://jdihn.go.id/assetsv3/plugins/fancybox/fancyMorph.css" rel="stylesheet" />
+<link href="https://jdihn.go.id/assetsv3/plugins/isotope/isotope.min.css" rel="stylesheet" />
+<link href="https://jdihn.go.id/assetsv3/plugins/animate/animate.css" rel="stylesheet">
+<!-- <link href="https://jdihn.go.id/assetsv3/plugins/select2/css/select2.min.css" rel="stylesheet"> -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+<link href="https://jdihn.go.id/assetsv3/plugins/daterangepicker/css/daterangepicker.css" rel="stylesheet">
+<!-- <link href="https://jdihn.go.id/assetsv3/plugins/revolution/css/settings.css" rel="stylesheet"> -->
+<link href="https://jdihn.go.id/assetsv3/plugins/menuzord/css/menuzord.css" rel="stylesheet">
+<link href="https://jdihn.go.id/assetsv3/plugins/menuzord/css/menuzord-animations.css" rel="stylesheet">
+<link href="https://jdihn.go.id/assetsv3/plugins/dzsparallaxer/dzsparallaxer.css" rel="stylesheet">
+<!-- <link href="https://jdihn.go.id/assetsv3/plugins/selectric/selectric.css" rel="stylesheet"> -->
+<link href="https://jdihn.go.id/assetsv3/plugins/rateyo/jquery.rateyo.min.css" rel="stylesheet">
+<link href="https://jdihn.go.id/assetsv3/plugins/slick/slick.css" rel="stylesheet">
+<link href="https://jdihn.go.id/assetsv3/plugins/slick/slick-theme.css" rel="stylesheet">
+<link href="https://jdihn.go.id/assetsv3/plugins/slidecaptcha/src/disk/slidercaptcha.css" rel="stylesheet">
+<!-- GOOGLE FONT -->
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700' rel='stylesheet'>
+<!-- CUSTOM CSS -->
+<link href="https://jdihn.go.id/assetsv3/css/star.css" id="option_style" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  .select2-selection__rendered {
+     line-height: 41px !important;
+  }
+  .select2-container .select2-selection--single {
+      height: 45px !important;
+  }
+  .select2-selection__arrow {
+      height: 45px !important;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  .modal-lg {
+    max-width: 90% !important;
+  }
+
+.captcha {
+	text-align: center !important; 
+    display: inline-block;
+}
+
+.g-recaptcha {
+    display: inline-block;
+}
+</style>
+
+<!-- Datatable CSS-->
+<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/fixedheader/3.1.7/css/fixedHeader.dataTables.min.css" rel="stylesheet">
+
+<!-- Highchart CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.6/css/highcharts.css" rel="stylesheet">
+
+<!-- Javascript -->
+<script src="https://jdihn.go.id/assetsv3/plugins/jquery/jquery-3.7.1.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/popper/popper.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+
+
+<!-- <script src="https://jdihn.go.id/assetsv3/plugins/velocity/velocity.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/images-loaded/js/imagesloaded.pkgd.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/menuzord/js/menuzord.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/dzsparallaxer/dzsparallaxer.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/slick/slick.min.js"></script> -->
+<!-- <script src="https://jdihn.go.id/assetsv3/plugins/selectric/jquery.selectric.min.js"></script> -->
+
+<!-- <script src="https://jdihn.go.id/assetsv3/plugins/rateyo/jquery.rateyo.min.js"></script> -->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU79W1lu5f6PIiuMqNfT1C6M0e_lq1ECY"></script>-->
+
+
+<!-- <script src="https://jdihn.go.id/assetsv3/js/elipsis.js"></script> -->
+
+<!-- <script src="https://jdihn.go.id/assetsv3/plugins/owl-carousel/owl.carousel.min.js"></script> -->
+<!-- <script src="https://jdihn.go.id/assetsv3/plugins/revolution/js/jquery.themepunch.tools.min.js"></script> -->
+<!-- <script src="https://jdihn.go.id/assetsv3/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script> -->
+
+<script src="https://jdihn.go.id/assetsv3/plugins/fancybox/jquery.fancybox.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/isotope/isotope.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/syotimer/jquery.syotimer.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/images-loaded/js/imagesloaded.pkgd.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/velocity/velocity.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/menuzord/js/menuzord.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/dzsparallaxer/dzsparallaxer.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/slick/slick.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/no-ui-slider/nouislider.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/slidecaptcha/src/disk/longbow.slidercaptcha.js"></script>
+
+<script src="https://jdihn.go.id/assetsv3/plugins/select2/js/select2.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/daterangepicker/js/moment.min.js"></script>
+<script src="https://jdihn.go.id/assetsv3/plugins/daterangepicker/js/daterangepicker.min.js"></script>
+
+<script src="https://jdihn.go.id/assetsv3/js/star.js"></script>
+<!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149927749-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149927749-3');
+</script>
+	
+
+<script type="text/javascript">
+	function toast(icon,message) {
+		const Toast = Swal.mixin({
+		  toast: true,
+		  position: 'top-end',
+		  showConfirmButton: false,
+		  timer: 3000,
+		  timerProgressBar: true,
+		  didOpen: (toast) => {
+		    toast.addEventListener('mouseenter', Swal.stopTimer)
+		    toast.addEventListener('mouseleave', Swal.resumeTimer)
+		  }
+		})
+
+		Toast.fire({
+		  icon: icon,
+		  title: message
+		})
+	}
+</script>
+
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+<!-- Highchart js from cdn -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var fixmeTop = $('.right-sidebar').offset().top;
+    var link = $('.footer');
+    // console.log($(window).height() - fixmeTop - link.height())
+    // console.log(fixmeTop)
+    // var bottom =       // get initial position of the element
+
+    $(window).scroll(function() {                  // assign scroll event listener
+
+        var currentScroll = $(window).scrollTop();
+        // console.log(currentScroll) // get current position
+
+        if (currentScroll >= fixmeTop && currentScroll < 5100) {           // apply position: fixed if you
+            $('.right-sidebar').css({                      // scroll to that element or below it
+                position: 'fixed',
+                top: '14vh'
+            });
+        // } else if (currentScroll >= 4600) {
+             // $('.right-sidebar').css({                      // if you scroll above it
+                // position: 'static',
+                // top : '5vh'
+            // });
+        } else {                                   // apply position: static
+            $('.right-sidebar').css({                      // if you scroll above it
+                position: 'static'
+            });
+        }
+
+    });
+
+
+    var pusatTable = $('#example-dhtp').DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: "https://jdihn.go.id/dokumen-hukum/data/pusat",
+      columns: [
+          { data: 'name', name: 'name', orderable:   false },
+          { data: 'jumlah', name: 'jumlah'},
+          { data: null, render : function (data) {
+            return '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-chart" data-tipe="'+data.name+'">Lihat Grafik</button>'
+          }},
+          { data: 'action', name: 'action', orderable:   false, searchable: false },
+       ],
+    });
+    var daerahTable = $('#example-dhtd').DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: "https://jdihn.go.id/dokumen-hukum/data/daerah",
+      columns: [
+          { data: 'name', name: 'name', orderable:   false },
+          { data: 'jumlah', name: 'jumlah'},
+          { data: null, render : function (data) {
+            return '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-chart" data-tipe="'+data.name+'">Lihat Grafik</button>'
+          }},
+          { data: 'action', name: 'action', orderable:   false, searchable: false },
+       ],
+    });
+    var kolonialTable = $('#example-dhek').DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: "https://jdihn.go.id/dokumen-hukum/data/kolonial",
+      columns: [
+          { data: 'name', name: 'name', orderable:   false },
+          { data: 'jumlah', name: 'jumlah'},
+          { data: null, render : function (data) {
+            return '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-chart" data-tipe="'+data.name+'">Lihat Grafik</button>'
+          }},
+          { data: 'action', name: 'action', orderable:   false, searchable: false },
+       ],
+    });
+    var monografiTable = $('#example-mono').DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: "https://jdihn.go.id/dokumen-hukum/data/monografi",
+      columns: [
+          { data: 'name', name: 'name', orderable:   false },
+          { data: 'jumlah', name: 'jumlah'},
+          { data: null, render : function (data) {
+            return '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-chart" data-tipe="'+data.name+'">Lihat Grafik</button>'
+          }},
+          { data: 'action', name: 'action', orderable:   false, searchable: false },
+       ],
+    });
+    var artikelTable = $('#example-artikel').DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: "https://jdihn.go.id/dokumen-hukum/data/artikel",
+      columns: [
+          { data: 'name', name: 'name', orderable:   false },
+          { data: 'jumlah', name: 'jumlah'},
+          { data: null, render : function (data) {
+            return '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-chart" data-tipe="'+data.name+'">Lihat Grafik</button>'
+          }},
+          { data: 'action', name: 'action', orderable:   false, searchable: false },
+       ],
+    });
+    var putusanTable = $('#example-putusan').DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: "https://jdihn.go.id/dokumen-hukum/data/putusan",
+      columns: [
+          { data: 'name', name: 'name', orderable:   false },
+          { data: 'jumlah', name: 'jumlah'},
+          { data: null, render : function (data) {
+            return '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-chart" data-tipe="'+data.name+'">Lihat Grafik</button>'
+          }},
+          { data: 'action', name: 'action', orderable:   false, searchable: false },
+       ],
+    });
+    var perjanjianTable = $('#example-perjanjian').DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: "https://jdihn.go.id/dokumen-hukum/data/perjanjian",
+      columns: [
+          { data: 'name', name: 'name', orderable:   false },
+          { data: 'jumlah', name: 'jumlah'},
+          { data: null, render : function (data) {
+            return '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-chart" data-tipe="'+data.name+'">Lihat Grafik</button>'
+          }},
+          { data: 'action', name: 'action', orderable:   false, searchable: false },
+       ],
+    });
+    var perguruantinggiTable = $('#example-perguruantinggi').DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: "https://jdihn.go.id/dokumen-hukum/data/perguruantinggi",
+      columns: [
+          { data: 'name', name: 'name', orderable:   false },
+          { data: 'jumlah', name: 'jumlah'},
+          { data: null, render : function (data) {
+            return '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-chart" data-tipe="'+data.name+'">Lihat Grafik</button>'
+          }},
+          { data: 'action', name: 'action', orderable:   false, searchable: false },
+       ],
+    });
+    var instrumenTable = $('#example-instrumen').DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: "https://jdihn.go.id/dokumen-hukum/data/instrumen",
+      columns: [
+          { data: 'name', name: 'name', orderable:   false },
+          { data: 'jumlah', name: 'jumlah'},
+          { data: null, render : function (data) {
+            return '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-chart" data-tipe="'+data.name+'">Lihat Grafik</button>'
+          }},
+          { data: 'action', name: 'action', orderable:   false, searchable: false },
+       ],
+    });
+  });
+</script>
+
+<script type="text/javascript">
+    var minDate = null;
+    var maxDate = null;
+    var tipeDokumen = null;
+
+    async function fetchData(modal, tipe, startDate, endDate) {
+
+        var url = "https://jdihn.go.id"+"/dokumen-hukum/data/"
+                    + tipe
+                    + "/uptren"
+                    + (
+                        startDate
+                        ? "?start_date=" + startDate + "&end_date=" + endDate
+                        : ""
+                    );
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            beforeSend: function () {
+
+                // add loading when data is being fetched
+                modal.find('#modal-chart-body').html('<div class="loading">Loading...</div>');
+                modal.find('#modal-date-picker').addClass('d-none');
+
+            },
+
+            success: function (data) {
+
+                // remove loading
+                modal.find('#modal-date-picker').removeClass('d-none');
+                modal.find('#modal-chart-body').html('<div id="chart-container"></div>');
+
+                // set minDate to first date of data
+                minDate = minDate ?? moment(data[0][0]);
+                maxDate = maxDate ?? moment(data[data.length - 1][0]);
+                tipeDokumen = tipe;
+
+                Highcharts.chart('chart-container', {
+                    chart: {
+                        type: 'line',
+                        zoomType: 'x'
+                    },
+                    title: {
+                        text: tipe
+                    },
+                    xAxis: {
+                        title: {
+                            text: 'Tanggal'
+                        },
+                        type: 'datetime',
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Jumlah Data'
+                        }
+                    },
+                    series: [{
+                        data: data
+                    }],
+                    legend: {
+                        enabled: false
+                    },
+                });
+
+
+                $('input[id="input-date"]').daterangepicker({
+                    startDate: moment(data[0][0]),
+                    endDate: moment(data[data.length - 1][0]),
+                    minDate: minDate,
+                    maxDate: maxDate,
+                    locale: {
+                        format: 'DD/MM/YYYY'
+                    }
+                });
+            },
+
+        });
+    }
+
+    $(document).ready(function () {
+        $('#modal-chart').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var tipe = button.data('tipe');
+            var modal = $(this);
+
+            fetchData(modal, tipe, null, null);
+        });
+    });
+
+    document.getElementById("btn-submit-date").addEventListener("click", function () {
+        var startDate = $('#input-date').data('daterangepicker').startDate;
+        var endDate = $('#input-date').data('daterangepicker').endDate;
+        var modal = $('#modal-chart');
+
+        console.log(startDate);
+
+        fetchData(modal, tipeDokumen, startDate, endDate);
+    });
+
+</script>
+    
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		            
+			var captcha = sliderCaptcha({
+			  	id: 'slidecaptcha',
+			  	width: 300,
+		        height: 150,
+		        sliderL: 42,
+		        sliderR: 9,
+		        offset: 5,
+				loadingText: 'Memuat...',
+				failedText: 'Coba Lagi',
+				barText: 'Geser ke kanan',
+				repeatIcon: 'fa fa-refresh',
+				onSuccess: function () {
+					// console.log(captcha.verify().verified)
+				},
+				setSrc: function () {
+				   	return 'https://jdihn.go.id/assetsv3/plugins/slidecaptcha/src/images/Pic' + Math.round(Math.random() * 4) + '.jpg';
+				},
+			});
+
+			$("#login #login-form").submit( function(eventObj) {
+			      $("<input />").attr("type", "hidden")
+			          .attr("name", "slider-response")
+			          .attr("value", captcha.verify().verified)
+			          .appendTo("#login #login-form");
+			      return true;
+			  });
+
+			var captcha_register = sliderCaptcha({
+			  	id: 'slidecaptcha-register',
+			  	width: 300,
+		        height: 150,
+		        sliderL: 42,
+		        sliderR: 9,
+		        offset: 5,
+				loadingText: 'Loading...',
+				failedText: 'Coba Lagi',
+				barText: 'Geser ke kanan untuk mengisi',
+				repeatIcon: 'fa fa-refresh',
+				onSuccess: function () {
+					// console.log(captcha.verify().verified)
+				},
+				setSrc: function () {
+				   	return 'https://jdihn.go.id/assetsv3/plugins/slidecaptcha/src/images/Pic' + Math.round(Math.random() * 4) + '.jpg';
+				},
+			});
+
+			$("#signup #register-form").submit( function(eventObj) {
+			      $("<input />").attr("type", "hidden")
+			          .attr("name", "slider-response")
+			          .attr("value", captcha_register.verify().verified)
+			          .appendTo("#signup #register-form");
+			        $("<input />").attr("type", "hidden")
+			          .attr("name", "provinsi_name")
+			          .attr("value", $('#provinsi').select2('data')[0].text)
+			          .appendTo("#signup #register-form");
+			      return true;
+			  });
+			// console.log(captcha.verify())
+			// console.log(captcha)
+
+            getJenisAnggota()
+            getProvinsi()
+      //       $('#signup').select2({
+		    //     dropdownParent: $('#signup')
+		    // });
+            $('#option_jenis_anggota').on('click change',function(e){
+            	if ($('#option_jenis_anggota').val()!==null) {
+            		var result = $('#option_jenis_anggota').val().split('|');
+
+	                $('#jenis_anggota').val(result[0]);
+	                $('#first_name').val(result[1]);
+            	}
+                
+            });
+
+	    	$('#provinsi').on('change', function () {
+                var json = null;
+                var id = this.value;
+
+                $.get('https://jdihn.go.id/api/getKabupaten/' + id, function (data) {
+                    // $('#kabupaten').val(null).trigger('change');
+                    json = JSON.parse(data);
+                    var test = null;
+                    // console.log("##PANJANGNYA =" + json.length)
+                    test =
+                        "<option></option>";
+                    for (i = 0; i < json.length; i++) {
+
+                        test += "<option  class='' value='" + json[i].id +
+                            "'>" + json[i].name + "</option>";
+
+                    }
+                    $('#kabupaten_option').show();
+                    $('#kabupaten').empty()
+                    $('#kabupaten').html(test);
+                    // $('#kabupaten').trigger('change');
+                    $('#kabupaten').select2({
+			          placeholder: 'Pilih Kabupaten',
+			          dropdownAutoWidth : true,
+			        });
+                });
+
+            });
+
+           //  $('#kabupaten').on('change', function () {
+
+           //      var json = null;
+           //      var idku = this.value;
+           //      $.get('https://jdihn.go.id/api/getKecamatan/' + idku, function (data) {
+           //          // $('#kecamatan').val(null).trigger('change');
+           //          json = JSON.parse(data);
+           //          var test = null;
+           //          // console.log("##PANJANGNYA =" + json.length)
+           //          test =
+           //              "<option></option>";
+           //          for (i = 0; i < json.length; i++) {
+
+           //              test += "<option  class='' value='" + json[i].id +
+           //                  "'>" + json[i].name + "</option>";
+
+           //          }
+           //          $('#kecamatan_option').show();
+           //          $('#kecamatan').empty()
+           //          $('#kecamatan').html(test);
+           //          // $('#kecamatan').trigger('change');
+           //          $('#kecamatan').select2({
+			        //   placeholder: 'Pilih Kecamatan',
+			        //   dropdownAutoWidth : true,
+			        // });
+           //      });
+           //  });
+
+
+        });
+
+        function getJenisAnggota() {
+                var json = null;
+                var id = this.value;
+
+                $.get('https://jdihn.go.id/api/listJenisAnggota', function (data) {
+                    $('#option_jenis_anggota').val(null).trigger('change');
+                    json = JSON.parse(data);
+                    var test = null;
+                    // console.log(json)
+                    // console.log("##PANJANGNYA =" + json.length)
+                    test =
+                        "<option></option>";
+                    for (i = 0; i < json.length; i++) {
+                    	// console.log(json[i])
+                        test += "<option  class='' value='" + json[i].id + "|" + json[i].nama+
+                            "'>" + json[i].nama + "</option>";
+                        // console.log(test)
+                    }
+                    // $('#option_jenis_anggota').show();
+                    $('#option_jenis_anggota').html(test);
+                    $('#option_jenis_anggota').trigger('change');
+                    $('#option_jenis_anggota').select2({
+			          placeholder: 'Pilih Jenis Anggota',
+			          dropdownAutoWidth : true,
+			        });
+                });
+
+
+        }
+
+        function getProvinsi() {
+                var json = null;
+                var id = this.value;
+
+                $.get('https://jdihn.go.id/api/listProvinsi', function (data) {
+                    json = JSON.parse(data);
+                    var test = null;
+                    test =
+                        "<option></option>";
+                    for (i = 0; i < json.length; i++) {
+                        test += "<option  class='' value='" + json[i].id+
+                            "'>" + json[i].name + "</option>";
+                    }
+                    $('#provinsi').html(test);
+                    $('#provinsi').select2({
+			          placeholder: 'Pilih Provinsi',
+			          dropdownAutoWidth : true,
+			        });
+                });
+
+
+        }
+    </script>
+	<script type="text/javascript">var Tawk_API=Tawk_API || {}, Tawk_LoadStart=new Date(); (function(){ var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0]; s1.async=true; s1.src="https://embed.tawk.to/625383ad7b967b117989eef9/1g0b3knm8"; s1.charset="UTF-8"; s1.setAttribute("crossorigin","*"); s0.parentNode.insertBefore(s1,s0); })();</script>
+  </body>
+</html>

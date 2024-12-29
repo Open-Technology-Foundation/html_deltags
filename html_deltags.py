@@ -59,7 +59,57 @@ Repository:
 
 from bs4 import BeautifulSoup, Comment
 
+from bs4 import BeautifulSoup, Comment
+
 def html_deltags(input_source, output, deltags:list, deltagkws, parser:str='html5lib'):
+  """
+  Detags/minimizes a HTML document by removing specified tags and comments.
+
+  Args:
+  input_source (str or file-like object): The source of the HTML content. Can be a file path or stdin.
+
+  output (str or file-like object): The destination for the detagged HTML content. Can be a file path or stdout.
+
+  deltags (list of str): Tags to remove from the HTML content.
+
+  deltagkws (list of tuples): Tags + keyword to remove from the HTML content. Must be in the format (tag, pattern).
+
+  This function reads the HTML content from input_source, removes the specified tags and comments, and writes the detagged/minimized HTML to output.
+  """
+  # Read input
+  if isinstance(input_source, str):
+    with open(input_source, 'r', encoding='utf-8') as file:
+      soup = BeautifulSoup(file, parser)
+  else:
+    soup = BeautifulSoup(input_source, parser)
+
+  # Remove all instances of specified tags and comments
+  for Tag in deltags:
+    if Tag in ('comments', '!--'):
+      # Find and remove all comment tags
+      comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+      for comment in comments:
+        comment.extract()
+    else:
+      for tag in soup.find_all(Tag):
+        tag.decompose()
+
+  # Remove all instances of a specific tag that contains a keyword
+  for tag_name, kw in deltagkws:
+    for tag in soup.find_all(lambda t: t.name == tag_name and t.get('class') and kw in t.get('class')):
+      tag.decompose()
+
+  # Minify
+  minified_html = soup.prettify(formatter="minimal")
+
+  # Output
+  if isinstance(output, str):
+    with open(output, 'w', encoding='utf-8') as file:
+      file.write(minified_html)
+  else:
+    output.write(minified_html)
+
+def XXXhtml_deltags(input_source, output, deltags:list, deltagkws, parser:str='html5lib'):
   """
   Detags/minimizes a HTML document by removing specified tags and comments.
 
