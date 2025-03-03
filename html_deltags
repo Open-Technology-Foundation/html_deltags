@@ -1,13 +1,27 @@
 #!/bin/bash
 #shellcheck disable=SC2155,SC1091
+# html_deltags - HTML tag-remover/reformatter launcher
+
+# Exit on error, undefined variables, and propagate pipe errors
 set -euo pipefail
 
+# Resolve script location (standard on Ubuntu/Debian)
 declare PRG0=$(readlink -en -- "$0")
 declare PRGDIR=$(dirname "$PRG0")
 declare PRG=$(basename "$PRG0")
-    
-source "$PRGDIR"/.venv/bin/activate
 
-"$PRGDIR"/"$PRG".py "$@"
+# Ensure virtual environment exists
+if [[ ! -f "$PRGDIR/.venv/bin/activate" ]]; then
+    echo "Error: Required virtual environment not found at $PRGDIR/.venv" >&2
+    echo "Please run: python3 -m venv $PRGDIR/.venv && $PRGDIR/.venv/bin/pip install -r $PRGDIR/requirements.txt" >&2
+    exit 1
+fi
 
-#fin
+# Activate virtual environment
+source "$PRGDIR/.venv/bin/activate"
+
+# Execute Python script with all arguments (without exec)
+"$PRGDIR/${PRG}.py" "$@"
+
+# Exit with the exit code from the Python script
+exit $?
