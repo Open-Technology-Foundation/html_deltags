@@ -14,7 +14,23 @@ Remove specific tags from a html file or stream and output detagged/minified HTM
 
     git clone https://github.com/Open-Technology-Foundation/html_deltags.git && sudo html_deltags/html_deltags.install
 
-`html_deltags.install` will copy html_deltags files to `/usr/share/html_deltags` and create symlink `/usr/local/bin/html_deltags`.
+`html_deltags.install` will:
+1. Copy html_deltags files to `/usr/local/share/html_deltags`
+2. Create a Python virtual environment with all dependencies in the installation directory
+3. Create a symlink at `/usr/local/bin/html_deltags`
+
+Options:
+- `-U, --upgrade`: Download the latest version from the repository before installing
+- `-h, --help`: Show help message
+
+Example:
+```
+# Install normally
+sudo ./html_deltags.install
+
+# Install using the latest version from the repository
+sudo ./html_deltags.install --upgrade
+```
 
 Root access is required for installation.
 
@@ -41,6 +57,11 @@ Options:
         HTML tags to remove, as a comma-separated list.
         Multiple -d options allowed.
         Example: ... -d script,link,meta ...
+        
+    -D|--delete-common
+        Add common tags to delete list in optimal order: doctype,head,header,footer,nav,
+        iframe,svg,script,style,noscript,comments,path,img,button.
+        Equivalent to -d with the above tags in this specific order.
 
     -k|--kw-delete 'tag keyword'
         Remove tags containing specific keywords.
@@ -72,6 +93,8 @@ Options:
     html_deltags my.html -d head,comments,nav
 
     html_deltags -d head,comments,nav < my.html > mynew.html
+    
+    html_deltags my.html -D -O clean.html
 
     html_deltags my.html -d head,comments,nav -d svg,path -O mynew.html
 

@@ -19,6 +19,10 @@ Options:
       HTML tags to remove, as a comma-separated list.
       Multiple -d options allowed.
       Example: ... -d script,link,meta ...
+  -D|--delete-common
+      Add common tags to delete list in optimal order: doctype,head,header,footer,nav,
+      iframe,svg,script,style,noscript,comments,path,img,button.
+      Equivalent to -d with the above tags in this specific order.
   -k|--kw-delete 'tag keyword'
       Remove tags containing specific keywords in class attribute.
       Specify tag, space, then the exact class or pattern to match.
@@ -56,7 +60,9 @@ Examples:
 
   html_deltags my.html -d head,comments,nav -d svg,path -O mynew.html
 
-  html_deltags my.html -d head,nav -k 'div sometext' -a 'div id sidebar'
+  html_deltags my.html -D -O clean.html
+
+  html_deltags my.html -D -k 'div sometext' -a 'div id sidebar'
 
 Requires:
   Python >= 3.10
@@ -71,15 +77,62 @@ Repository:
 
 import os
 import sys
+import re
 from typing import List, Tuple, Union, Optional, TextIO
 from bs4 import BeautifulSoup, Comment, Tag
+import bs4
 
 # Define supported parsers
 SUPPORTED_PARSERS = ["html5lib", "lxml", "html.parser"]
 
+# Define common tags to delete with -D option
+# Ordered for optimal efficiency: container elements first, then large content blocks, then leaf nodes
+COMMON_DELTAGS = [
+    "doctype", "head", "header", "footer", "nav", "iframe", "svg", "script", 
+    "style", "noscript", "comments", "path", "img", "button"
+]
+
 class HTMLProcessingError(Exception):
     """Custom exception for HTML processing errors."""
     pass
+
+def clean_special_content(soup: BeautifulSoup) -> None:
+    """
+    Clean special content like doctype declarations and comments that might be
+    escaped or not properly handled by BeautifulSoup.
+    
+    Args:
+        soup: The BeautifulSoup object to clean
+    """
+    # Handle doctype declarations
+    for item in list(soup.children):
+        if isinstance(item, bs4.Doctype):
+            item.extract()
+    
+    # Process all text nodes to remove escaped special content
+    for element in soup.find_all(string=True):
+        text = str(element)
+        if any(pattern in text for pattern in [
+            '<!DOCTYPE', '&lt;!DOCTYPE', 
+            '<!--', '-->', '&lt;!--', '--&gt;'
+        ]):
+            # Remove doctype declarations
+            new_text = text
+            new_text = new_text.replace('<!DOCTYPE html>', '')
+            new_text = new_text.replace('&lt;!DOCTYPE html&gt;', '')
+            # More generic DOCTYPE patterns
+            new_text = new_text.replace('<!DOCTYPE', '')
+            new_text = new_text.replace('&lt;!DOCTYPE', '')
+            
+            # Remove comments
+            new_text = new_text.replace('&lt;!--', '')
+            new_text = new_text.replace('--&gt;', '')
+            new_text = new_text.replace('<!--', '')
+            new_text = new_text.replace('-->', '')
+            
+            # Clean up any remaining HTML tags that might be in plain text
+            if new_text != text:
+                element.replace_with(new_text)
 
 def html_deltags(
     input_source: Union[str, TextIO], 
@@ -133,12 +186,17 @@ def html_deltags(
         # Remove all instances of specified tags and comments
         for tag_name in deltags:
             try:
-                if tag_name.lower() in ('comments', '!--'):
+                if tag_name.lower() == 'doctype':
+                    # This will be handled separately by clean_special_content
+                    continue
+                elif tag_name.lower() in ('comments', '!--'):
                     # Find and remove all comment tags
                     try:
                         comments = soup.find_all(string=lambda text: isinstance(text, Comment))
                         for comment in comments:
                             comment.extract()
+                        # Other comment-like structures will be handled by clean_special_content
+                            
                     except Exception as e:
                         print(f"Warning: Error removing comments: {str(e)}", file=sys.stderr)
                         continue
@@ -207,6 +265,10 @@ def html_deltags(
                 # Log error and continue with next attribute search
                 print(f"Warning: Error processing tag '{tag_name}' with attribute '{attr_name}': {str(e)}", file=sys.stderr)
 
+        # Run special cleanup for doctype, comments, and other special content
+        if any(tag.lower() in ['doctype', 'comments', '!--'] for tag in deltags):
+            clean_special_content(soup)
+            
         # Format the HTML
         if minify:
             # Full minification
@@ -214,6 +276,23 @@ def html_deltags(
         else:
             # Pretty print with minimal formatting
             processed_html = soup.prettify(formatter="minimal")
+            
+        # Final post-processing for any remaining DOCTYPE or comment strings
+        if any(tag.lower() in ['doctype', 'comments', '!--'] for tag in deltags):
+            # Use regex to clean up escaped and unescaped DOCTYPE and comments
+            # Remove doctype declarations with regex
+            processed_html = re.sub(r'&lt;!DOCTYPE.*?&gt;', '', processed_html, flags=re.DOTALL)
+            processed_html = re.sub(r'<!DOCTYPE.*?>', '', processed_html, flags=re.DOTALL)
+            processed_html = re.sub(r'&lt;\\!DOCTYPE.*?&gt;', '', processed_html, flags=re.DOTALL)
+            
+            # Remove comment tags with regex
+            processed_html = re.sub(r'&lt;!--.*?--&gt;', '', processed_html, flags=re.DOTALL)
+            processed_html = re.sub(r'<!--.*?-->', '', processed_html, flags=re.DOTALL)
+            processed_html = re.sub(r'&lt;\\!--.*?--&gt;', '', processed_html, flags=re.DOTALL)
+            
+            # Handle partially escaped comment patterns (found in some test cases)
+            processed_html = re.sub(r'&lt;\\!-- .*', '', processed_html)
+            processed_html = re.sub(r'&lt;\!-- .*', '', processed_html)
 
         # Output the processed HTML
         if isinstance(output, str):
@@ -310,6 +389,10 @@ def parse_arguments() -> Tuple[
                 sys.exit(1)
             deltags.extend(sys.argv[index + 1].split(','))
             index += 1
+            
+        # Common tags to delete
+        elif arg in ('-D', '--delete-common'):
+            deltags.extend(COMMON_DELTAGS)
             
         # Tag+keyword delete
         elif arg in ('-k', '--kw-delete'):
