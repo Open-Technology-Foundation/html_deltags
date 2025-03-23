@@ -25,3 +25,5 @@ source "$PRGDIR/.venv/bin/activate"
 
 # Exit with the exit code from the Python script
 exit $?
+
+#fin

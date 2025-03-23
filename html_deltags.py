@@ -20,10 +20,10 @@ Options:
       Multiple -d options allowed.
       Example: ... -d script,link,meta ...
   -k|--kw-delete 'tag keyword'
-      Remove tags containing specific keywords.
-      Specify tag, space, then pattern/keyword.
+      Remove tags containing specific keywords in class attribute.
+      Specify tag, space, then the exact class or pattern to match.
       Multiple -k options allowed.
-      Example: ... -k 'div sometext' ...
+      Example: ... -k 'div elementor-widget-container' ...
   -a|--attr-delete 'tag attr value'
       Remove tags with specific attribute values.
       Specify tag, attribute name, value pattern.
@@ -132,46 +132,80 @@ def html_deltags(
 
         # Remove all instances of specified tags and comments
         for tag_name in deltags:
-            if tag_name.lower() in ('comments', '!--'):
-                # Find and remove all comment tags
-                comments = soup.find_all(string=lambda text: isinstance(text, Comment))
-                for comment in comments:
-                    comment.extract()
-            else:
-                # Find and remove all instances of the specified tag
-                for tag in soup.find_all(tag_name):
-                    tag.decompose()
+            try:
+                if tag_name.lower() in ('comments', '!--'):
+                    # Find and remove all comment tags
+                    try:
+                        comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+                        for comment in comments:
+                            comment.extract()
+                    except Exception as e:
+                        print(f"Warning: Error removing comments: {str(e)}", file=sys.stderr)
+                        continue
+                else:
+                    # Find and remove all instances of the specified tag
+                    try:
+                        for tag in soup.find_all(tag_name):
+                            try:
+                                tag.decompose()
+                            except (AttributeError, TypeError) as e:
+                                # Skip this tag if any error occurs processing it
+                                continue
+                    except Exception as e:
+                        print(f"Warning: Error removing tag '{tag_name}': {str(e)}", file=sys.stderr)
+                        continue
+            except Exception as e:
+                print(f"Warning: Error processing tag type '{tag_name}': {str(e)}", file=sys.stderr)
+                continue
 
         # Remove all instances of a specific tag that contains a keyword in class attribute
         for tag_name, keyword in deltagkws:
-            for tag in soup.find_all(tag_name):
-                # Get class value, handling both string and list representations
-                class_attr = tag.get('class')
-                if class_attr:
-                    # Convert list to space-separated string if necessary
-                    if isinstance(class_attr, list):
-                        class_str = ' '.join(class_attr)
-                    else:
-                        class_str = class_attr
-                        
-                    # Remove tag if keyword is found in class
-                    if keyword in class_str:
-                        tag.decompose()
+            try:
+                for tag in soup.find_all(tag_name):
+                    try:
+                        # Get class value, handling both string and list representations
+                        class_attr = tag.get('class')
+                        if class_attr is not None:  # Check specifically for None
+                            # Check for exact class match
+                            if isinstance(class_attr, list):
+                                # If it's a list, check if the keyword matches any class name exactly
+                                if keyword in class_attr:
+                                    tag.decompose()
+                            else:
+                                # If it's a string, split by whitespace and check for exact match
+                                class_str = str(class_attr)  # Ensure it's a string
+                                class_list = class_str.split()
+                                if keyword in class_list:
+                                    tag.decompose()
+                    except (AttributeError, TypeError) as e:
+                        # Skip this tag if any error occurs processing it
+                        continue
+            except Exception as e:
+                # Log error and continue with next keyword
+                print(f"Warning: Error processing tag '{tag_name}' with keyword '{keyword}': {str(e)}", file=sys.stderr)
 
         # Remove all instances of a tag with specific attribute values
         for tag_name, attr_name, attr_value in delattrvals:
-            for tag in soup.find_all(tag_name):
-                attr_val = tag.get(attr_name)
-                if attr_val:
-                    # Handle both string and list attribute values
-                    if isinstance(attr_val, list):
-                        attr_str = ' '.join(attr_val)
-                    else:
-                        attr_str = attr_val
-                        
-                    # Remove tag if attribute value contains the specified value
-                    if attr_value in attr_str:
-                        tag.decompose()
+            try:
+                for tag in soup.find_all(tag_name):
+                    try:
+                        attr_val = tag.get(attr_name)
+                        if attr_val is not None:  # Check specifically for None
+                            # Handle both string and list attribute values
+                            if isinstance(attr_val, list):
+                                attr_str = ' '.join(attr_val)
+                            else:
+                                attr_str = str(attr_val)  # Ensure it's a string
+                                
+                            # Remove tag if attribute value contains the specified value
+                            if attr_value in attr_str:
+                                tag.decompose()
+                    except (AttributeError, TypeError) as e:
+                        # Skip this tag if any error occurs processing it
+                        continue
+            except Exception as e:
+                # Log error and continue with next attribute search
+                print(f"Warning: Error processing tag '{tag_name}' with attribute '{attr_name}': {str(e)}", file=sys.stderr)
 
         # Format the HTML
         if minify:
@@ -368,3 +402,5 @@ def main() -> int:
 # If running as a shell script
 if __name__ == '__main__':
     sys.exit(main())
+
+#fin
