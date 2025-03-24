@@ -22,11 +22,12 @@ declare -r PRGNAME="html_deltags"
 declare -r INSTALL_DIR="/usr/local/share/${PRGNAME}"
 declare -r SYMLINK_PATH="/usr/local/bin/${PRGNAME}"
 declare -r SCRIPT_PATH=$(readlink -en -- "$0")
-declare -r SCRIPT_DIR="${SCRIPT_PATH%/*}"
+declare SCRIPT_DIR="${SCRIPT_PATH%/*}"  # Not readonly so we can update it during upgrade
 
 # Define repository URL
 declare -r REPO_URL="https://github.com/Open-Technology-Foundation/html_deltags"
 declare -i UPGRADE=0
+declare TEMP_DIR=""
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -56,7 +57,11 @@ if ((EUID)); then
 fi
 
 # Start installation
-echo "Installing ${PRGNAME} to ${INSTALL_DIR}"
+if ((UPGRADE)); then
+  echo "Upgrading ${PRGNAME} at ${INSTALL_DIR} with the latest version"
+else
+  echo "Installing ${PRGNAME} to ${INSTALL_DIR}"
+fi
 echo "A symlink will be created at ${SYMLINK_PATH}"
 echo
 
@@ -79,15 +84,30 @@ if ((UPGRADE)); then
   echo "Cloning latest version from ${REPO_URL}..."
   
   # Clone repository
-  if ! git clone --depth 1 "${REPO_URL}" "${TEMP_DIR}"; then
+  echo "Running: git clone --depth 1 ${REPO_URL} ${TEMP_DIR}/${PRGNAME}"
+  if ! git clone --depth 1 "${REPO_URL}" "${TEMP_DIR}/${PRGNAME}"; then
     echo "Error: Failed to clone repository"
     rm -rf "${TEMP_DIR}"
     exit 1
   fi
   
   # Update script directory to use downloaded files
-  SCRIPT_DIR="${TEMP_DIR}"
+  SCRIPT_DIR="${TEMP_DIR}/${PRGNAME}"
   echo "Successfully downloaded latest version"
+  
+  # Show version difference if installing over existing installation
+  if [[ -d "${INSTALL_DIR}" && -f "${INSTALL_DIR}/html_deltags.py" ]]; then
+    echo
+    echo "Upgrading from installed version to latest repository version:"
+    if command -v git &> /dev/null; then
+      # Try to get version info
+      current_version=$(cd "${INSTALL_DIR}" && git describe --tags 2>/dev/null || echo "unknown")
+      new_version=$(cd "${SCRIPT_DIR}" && git describe --tags 2>/dev/null || echo "latest")
+      echo "Current: ${current_version} -> New: ${new_version}"
+    else
+      echo "(Git not available for version comparison)"
+    fi
+  fi
 fi
 
 # Create installation directory
@@ -95,8 +115,8 @@ echo "Creating installation directory..."
 mkdir -p "${INSTALL_DIR}"
 
 # Copy files
-echo "Copying files..."
-rsync -aql "${SCRIPT_DIR}"/ "${INSTALL_DIR}"
+echo "Copying files from ${SCRIPT_DIR} to ${INSTALL_DIR}..."
+rsync -aqlv "${SCRIPT_DIR}"/ "${INSTALL_DIR}"
 
 # Clean up temp directory if we created one
 if ((UPGRADE)) && [[ -d "${TEMP_DIR}" ]]; then
