@@ -89,7 +89,8 @@ SUPPORTED_PARSERS = ["html5lib", "lxml", "html.parser"]
 # Ordered for optimal efficiency: container elements first, then large content blocks, then leaf nodes
 COMMON_DELTAGS = [
     "doctype", "head", "header", "footer", "nav", "iframe", "svg", "script", 
-    "style", "noscript", "comments", "path", "img", "button"
+    "style", "noscript", "comments", "path", "img", "button", "figure", "textarea",
+    "fieldset", "meta"
 ]
 
 class HTMLProcessingError(Exception):
