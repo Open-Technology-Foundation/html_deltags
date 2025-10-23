@@ -1,0 +1,93 @@
+#!/bin/bash
+#shellcheck disable=SC2155,SC1091
+# html_extract.install - Installs the html_extract tool
+
+# Exit on error, undefined variables, and propagate pipe errors
+set -euo pipefail
+
+# Check for root privileges
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root (with sudo)" 
+   exit 1
+fi
+
+# Default installation directory
+declare INSTALL_DIR="/usr/local/share/html_deltags"
+declare -i UPGRADE=0
+
+# Process command line arguments
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --upgrade)
+      UPGRADE=1
+      shift
+      ;;
+    *)
+      echo "Unknown option: $1"
+      echo "Usage: $0 [--upgrade]"
+      exit 1
+      ;;
+  esac
+done
+
+# Upgrade if requested
+if [[ $UPGRADE -eq 1 ]]; then
+  echo "Upgrading html_extract..."
+  
+  # Check if git is installed
+  if ! command -v git &> /dev/null; then
+    echo "Error: Git is required for upgrade but not installed."
+    exit 1
+  fi
+  
+  # Create temporary directory
+  declare TMP_DIR=$(mktemp -d)
+  cd "$TMP_DIR" || exit 1
+  
+  # Clone the repository
+  echo "Downloading latest version..."
+  git clone https://github.com/Open-Technology-Foundation/html_deltags.git
+  
+  # Copy new files to installation directory
+  echo "Installing new version..."
+  mkdir -p "$INSTALL_DIR"
+  cp -r html_deltags/* "$INSTALL_DIR/"
+  
+  # Clean up
+  rm -rf "$TMP_DIR"
+else
+  # Install from current directory
+  echo "Installing html_extract..."
+  
+  # Create installation directory
+  mkdir -p "$INSTALL_DIR"
+  
+  # Copy files to installation directory
+  cp -r ./* "$INSTALL_DIR/"
+fi
+
+# Make scripts executable
+chmod +x "$INSTALL_DIR/html_extract"
+chmod +x "$INSTALL_DIR/html_extract.py"
+
+# Create a virtual environment if it doesn't exist
+if [[ ! -d "$INSTALL_DIR/.venv" ]]; then
+  echo "Creating virtual environment..."
+  cd "$INSTALL_DIR" || exit 1
+  python3 -m venv .venv
+  .venv/bin/pip install -r requirements.txt
+else
+  # Update packages if it already exists
+  echo "Updating virtual environment packages..."
+  cd "$INSTALL_DIR" || exit 1
+  .venv/bin/pip install -U -r requirements.txt
+fi
+
+# Create symlink in /usr/local/bin
+echo "Creating symlink in /usr/local/bin..."
+ln -sf "$INSTALL_DIR/html_extract" /usr/local/bin/html_extract
+
+echo "Installation complete. Run 'html_extract -h' for usage information."
+exit 0
+
+#fin

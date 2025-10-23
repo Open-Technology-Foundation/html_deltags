@@ -1,0 +1,124 @@
+#!/bin/bash
+# Bash completion for html_deltags, html_extract, and html_format
+
+_html_deltags_complete() {
+  local cur prev opts
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  
+  opts="-O --output -d --delete -D --delete-common -k --kw-delete -a --attr-delete -p --parser -m --minify -h --help"
+  parsers="html5lib lxml html.parser"
+  
+  case "${prev}" in
+    -O|--output)
+      COMPREPLY=( $(compgen -f "${cur}") )
+      return 0
+      ;;
+    -p|--parser)
+      COMPREPLY=( $(compgen -W "${parsers}" -- "${cur}") )
+      return 0
+      ;;
+    -d|--delete)
+      local tags="head script style nav footer header iframe svg noscript comments img button meta link doctype figure textarea fieldset path"
+      COMPREPLY=( $(compgen -W "${tags}" -- "${cur}") )
+      return 0
+      ;;
+    -k|--kw-delete|-a|--attr-delete)
+      return 0
+      ;;
+  esac
+  
+  if [[ ${cur} == -* ]]; then
+    COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+    return 0
+  fi
+  
+  COMPREPLY=( $(compgen -f -X "!*.html" -- "${cur}") $(compgen -f -X "!*.htm" -- "${cur}") )
+}
+
+_html_extract_complete() {
+  local cur prev opts
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  
+  opts="-O --output -p --parser -i --include-tags -r --raw -n --no-newlines -a --attributes -h --help"
+  parsers="html5lib lxml html.parser"
+  
+  case "${prev}" in
+    -O|--output)
+      COMPREPLY=( $(compgen -f "${cur}") )
+      return 0
+      ;;
+    -p|--parser)
+      COMPREPLY=( $(compgen -W "${parsers}" -- "${cur}") )
+      return 0
+      ;;
+    -a|--attributes)
+      local attrs="class id href src alt title name content"
+      COMPREPLY=( $(compgen -W "${attrs}" -- "${cur}") )
+      return 0
+      ;;
+  esac
+  
+  if [[ ${cur} == -* ]]; then
+    COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+    return 0
+  fi
+  
+  # First argument is selector (no completion), then HTML files
+  local args_count=0
+  for (( i=1; i<COMP_CWORD; i++ )); do
+    if [[ "${COMP_WORDS[i]}" != -* ]] && [[ "${COMP_WORDS[i-1]}" != -* ]]; then
+      ((args_count++))
+    fi
+  done
+  
+  if [[ ${args_count} -eq 0 ]]; then
+    # First positional arg is selector - suggest common tags
+    local selectors="p div span h1 h2 h3 h4 h5 h6 a img title head body html"
+    COMPREPLY=( $(compgen -W "${selectors}" -- "${cur}") )
+  else
+    # Subsequent args are HTML files
+    COMPREPLY=( $(compgen -f -X "!*.html" -- "${cur}") $(compgen -f -X "!*.htm" -- "${cur}") )
+  fi
+}
+
+_html_format_complete() {
+  local cur prev opts
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  
+  opts="-O --output -p --parser -i --indent -m --minify -h --help"
+  parsers="html5lib lxml html.parser"
+  
+  case "${prev}" in
+    -O|--output)
+      COMPREPLY=( $(compgen -f "${cur}") )
+      return 0
+      ;;
+    -p|--parser)
+      COMPREPLY=( $(compgen -W "${parsers}" -- "${cur}") )
+      return 0
+      ;;
+    -i|--indent)
+      COMPREPLY=( $(compgen -W "2 4 8" -- "${cur}") )
+      return 0
+      ;;
+  esac
+  
+  if [[ ${cur} == -* ]]; then
+    COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+    return 0
+  fi
+  
+  COMPREPLY=( $(compgen -f -X "!*.html" -- "${cur}") $(compgen -f -X "!*.htm" -- "${cur}") )
+}
+
+complete -F _html_deltags_complete html_deltags
+complete -F _html_extract_complete html_extract
+complete -F _html_format_complete html_format
+
+#fin
